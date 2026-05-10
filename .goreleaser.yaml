@@ -1,0 +1,49 @@
+version: 2
+
+project_name: supacrawl
+
+before:
+  hooks:
+    - go mod tidy
+    - go test ./...
+    - go vet ./...
+
+builds:
+  - id: supacrawl
+    main: ./cmd/supacrawl
+    binary: supacrawl
+    env:
+      - CGO_ENABLED=0
+    ldflags:
+      - -s -w -X github.com/davemorin/supacrawl/internal/cli.Version={{.Version}}
+    goos:
+      - darwin
+      - linux
+      - windows
+    goarch:
+      - amd64
+      - arm64
+
+archives:
+  - id: default
+    builds:
+      - supacrawl
+    files:
+      - README.md
+      - LICENSE
+      - config.example.toml
+
+checksum:
+  name_template: checksums.txt
+
+brews:
+  - name: supacrawl
+    repository:
+      owner: davemorin
+      name: homebrew-tap
+      token: "{{ .Env.TAP_GITHUB_TOKEN }}"
+    homepage: https://github.com/davemorin/supacrawl
+    description: Mirror Supabase/Postgres into local SQLite for search and offline analysis.
+    license: MIT
+    test: |
+      system "#{bin}/supacrawl", "version"

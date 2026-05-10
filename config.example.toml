@@ -1,0 +1,26 @@
+version = 1
+db_path = "~/.supacrawl/supacrawl.db"
+log_dir = "~/.supacrawl/logs"
+
+[source]
+project_id = ""
+database_url = ""
+database_url_env = "SUPABASE_DB_URL"
+supabase_url = ""
+supabase_url_env = "SUPABASE_URL"
+service_role_key_env = "SUPABASE_SERVICE_ROLE_KEY"
+exclude_schemas = ["information_schema", "pg_catalog", "pg_toast", "pg_temp_%"]
+
+[search]
+default_limit = 20
+
+[sync]
+read_policy = "auto"
+stale_after = "15m"
+
+[backup]
+repo_path = "~/.supacrawl/backups"
+recipient = ""
+recipient_env = "SUPACRAWL_AGE_RECIPIENT"
+identity_path = "~/.supacrawl/age.key"
+identity_env = "SUPACRAWL_AGE_IDENTITY"
